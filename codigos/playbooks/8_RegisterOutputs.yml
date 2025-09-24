@@ -5,7 +5,7 @@
   tasks:
     - name: SISOP | Find files
       find:
-        path: /tmp
+        path: /
         patterns: '*.*'
       register: output
 
