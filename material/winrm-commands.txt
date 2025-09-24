@@ -1,0 +1,21 @@
+# Validando pré-requisitos (Executar comandos abaixo no PowerShell como Administrator):
+
+    - NET Framework 4.0+: cd c:\Windows\Microsoft.NET\Framework64
+    - Powershell 3.0+: Get-Host
+    - Winrm Version: winrm id
+
+# WinRM
+
+    - Listar o serviço: 
+        - netstat -nap tcp
+        - winrm enumerate winrm/config/listener
+        
+    - Visualizar as configurações
+        - winrm get winrm/config
+        - winrm get winrm/config/service
+
+    - Configurando permissões para winrm
+        - winrm configSDLL default
+
+    - Ativar/Desativar autenticação:
+        - Set-Item -Path WSMan:\localhost\Service\Auth\AUTH_METHOD -Value $(true or false)

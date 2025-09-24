@@ -1,0 +1,16 @@
+- name: Ansible Facts Vars
+  hosts: rocky01
+  tasks:
+    - name: DEBUG | Ansible Facts - {{ ansible_facts }}
+      ansible.builtin.debug:
+        msg:
+          - "MAC Address: {{ ansible_default_ipv4.macaddress }}"
+          - "IP Address: {{ ansible_default_ipv4.address }}"
+          - "Hostname: {{ ansible_hostname }}"
+          - "OS Family: {{ ansible_os_family }}"
+          - "OS Distribution: {{ ansible_distribution }}"
+          - "OS Version: {{ ansible_distribution_version }}"
+          - "OS Architecture: {{ ansible_architecture }}"
+          - "OS Kernel: {{ ansible_kernel }}" 
+          - "OS Language: {{ ansible_env.LANG }}"
+          - "OS User: {{ ansible_user_id }}"

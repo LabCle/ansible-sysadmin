@@ -1,0 +1,28 @@
+[all]
+
+[ubuntu]
+ubuntu01 ansible_host=192.168.0.145
+ubuntu02 ansible_host=192.168.0.146
+
+[rocky]
+rocky01 ansible_host=192.168.0.140
+rocky02 ansible_host=192.168.0.141
+
+[windows]
+windows01 ansible_host=192.168.0.150
+
+[linux:children]
+ubuntu
+rocky
+
+[ubuntu:vars]
+http_port=8080
+
+[rocky:vars]
+squid_port=3128
+
+[linux:vars]
+ansible_port=22
+ansible_user=root
+
+

@@ -1,0 +1,48 @@
+Quero montar laboratorio para explorar todos recursos possiveis do AAP (Ansible Automation Platform) 
+Vou criar um prompt para iniciar e vou complementar na sequencia com imagens para facilitar o entendimento.
+Ja tenho ambiente criado no Proxmox com as seguintes vms:
+
+# AAP LAB Hosts
+192.168.0.120   aap-controller-1
+192.168.0.121   aap-controller-2
+192.168.0.122   aap-lb aap.lab.local
+192.168.0.123   aap-db
+192.168.0.124   aap-hub
+192.168.0.125   aap-eda
+192.168.0.126   aap-exec-1
+192.168.0.127   aap-exec-2
+192.168.0.128   aap-hop-1
+192.168.0.129   aap-gateway
+192.168.0.130   aap-observability
+
+Tenho essas maquinas que constam nesse inventario em meu ambiente Proxmox:
+
+[all]
+
+[ubuntu]
+ubuntu01 ansible_host=192.168.0.145
+ubuntu02 ansible_host=192.168.0.146
+
+[rocky]
+rocky01 ansible_host=192.168.0.140
+rocky02 ansible_host=192.168.0.141
+
+[windows]
+windows01 ansible_host=192.168.0.150
+
+[linux:children]
+ubuntu
+rocky
+
+[ubuntu:vars]
+http_port=8080
+
+[rocky:vars]
+squid_port=3128
+
+[linux:vars]
+ansible_port=22
+ansible_user=root
+
+---
+Quero criar repositiorio para explorar ao maximo todas as collections e criar casos para usar os hosts linux (rocky e ubuntu) e windows.

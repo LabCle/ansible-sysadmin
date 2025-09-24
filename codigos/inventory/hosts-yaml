@@ -1,0 +1,22 @@
+all:
+  children:
+    ubuntu:
+      hosts:
+        ubuntu01:
+          ansible_host: 192.168.0.132
+          zz: 1
+      vars:
+        http_port: 8080
+    redhat:
+      hosts:
+        rocky01:
+          ansible_host: 192.168.0.133
+      vars:
+        squid_port: 3128
+    linux:
+      children:
+        ubuntu:
+        redhat:
+      vars:
+        ansible_port: 22
+        ansible_user: root

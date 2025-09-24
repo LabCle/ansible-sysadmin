@@ -1,0 +1,6 @@
+---
+collections:
+  - name: git+https://github.com/grafana/grafana-ansible-collection.git
+  - name: git+https://github.com/ansible-collections/community.general.git
+  - name: git+https://github.com/ansible-collections/community.grafana.git
+  - name: git+https://github.com/ansible-collections/ansible.posix.git

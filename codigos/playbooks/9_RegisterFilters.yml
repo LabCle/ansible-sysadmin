@@ -1,0 +1,20 @@
+---
+
+- name: Ansible Register Filters
+  hosts: all
+  tasks:
+    - name: SISOP | Find files
+      find:
+        path: /tmp
+        patterns: '*.cfg'
+      register: output
+
+    - name: SISOP | Show files
+      debug: 
+        msg:
+          - Modes: "{{ output.files | map(attribute='mode') | sort }}"
+          - Path: "{{ output.files | map(attribute='path') | sort }}"
+        
+
+
+...
