@@ -1,7 +1,7 @@
 ---
 
 - name: Ansible Conditionals Bool
-  hosts: rocky01
+  hosts: all
   vars:
     backup: true
     snapshot: false

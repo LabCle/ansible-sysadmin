@@ -1,7 +1,7 @@
 ---
 
 - name: Variables in runtime
-  hosts: rocky01
+  hosts: all
   tasks:
     - name: DEBUG | Variables in runtime
       ansible.builtin.debug:

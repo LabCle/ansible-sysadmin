@@ -1,7 +1,7 @@
 ---
 
 - name: Block Testing
-  hosts: rocky01
+  hosts: all
   tasks:
     - block:
         - ansible.builtin.debug:
