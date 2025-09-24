@@ -6,7 +6,7 @@
     - name: SISOP | Find files
       find:
         path: /tmp
-        patterns: '*.cfg'
+        patterns: '*.*'
       register: output
 
     - name: SISOP | Show files
